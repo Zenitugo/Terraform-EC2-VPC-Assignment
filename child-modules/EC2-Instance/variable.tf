@@ -5,6 +5,7 @@ variable "instance_ami" {}
 variable "ec2_instance_type" {}
 variable "key_name" {}
 variable "key_filename" {}
+variable "availability_zone" {}
 variable "security-name" {} 
 variable "vpc_id_id" {}
 variable "private_subnet_id" {}
