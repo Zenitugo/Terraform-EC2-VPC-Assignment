@@ -6,6 +6,7 @@ module "EC2_Instance" {
   ec2_instance_type =  "t2.micro"
   key_name = "mykeypair"
   key_filename = "/home/ubuntu/.ssh/id_rsa"
+  availability_zone = ["eu-west-1a", "eu-west-1b"]
   security-name = "security-west"
   vpc_id_id = module.network.vpc_id_id
   private_subnet_id = module.network.private_subnet_id
