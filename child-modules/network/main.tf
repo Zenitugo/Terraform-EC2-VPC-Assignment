@@ -18,6 +18,7 @@ resource "aws_subnet" "public-subnet" {
   vpc_id = aws_vpc.custom-vpc.id
   cidr_block = var.public_subnet
   map_public_ip_on_launch = true
+  availability_zone = data.aws_availability_zones.azs.names[0]
 
   tags = {
     Name = "public-subnet"
@@ -28,6 +29,7 @@ resource "aws_subnet" "public-subnet" {
 resource "aws_subnet" "private-subnet" {
   vpc_id = aws_vpc.custom-vpc.id
   cidr_block = var.private_subnet
+  availability_zone = data.aws_availability_zones.azs.names[1]
 
   tags = {
     Name = "private-subnet"
