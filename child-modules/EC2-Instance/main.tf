@@ -5,7 +5,6 @@ resource "aws_instance" "vm" {
     instance_type = var.ec2_instance_type
     key_name = aws_key_pair.testkey.id
     subnet_id = [var.private_subnet_id, var.public_subnet_id][count.index]
-    availability_zone = var.availability_zone[count.index]
     vpc_security_group_ids = [aws_security_group.sg-group.id]
 
   tags = {
