@@ -6,7 +6,7 @@ Below is a brief description of the content of each directory.
 This directory contains sub-directories called **EC2_Instance** and **Network**.
 
 ### EC2-INSTANCE
-This directory contains the main configuration file **(main.tf)**, the **variable.tf** file that accepts inputs that will be passed to the main.tf, and the **output.tf** file that is used to receive values we don't know at the time of writing the code
+This directory contains the main configuration file **(main.tf)**, the **variable.tf** file that accepts inputs that will be passed to the main.tf, and the **output.tf** file that is used to output the value of a resource block.
 
 ### Network 
 This directory contains a main.tf file and variable.tf file is similar to EC2Instance but differs in that it has **data.tf** file which is used to query aws infrastructure so we can know the available availability_zones and attach each subnet to each availability zone.
@@ -28,7 +28,7 @@ The provider.tf specifies the region and the provider where I want to create the
 - creating route tables for the public subnet.
 - associating the public subnet with the internet gateway.
 
-*The third step was to create an ec2 and the step by step process involved:*
+*The third step was to create an ec2 and the step by step process involved were:*
 - giving the ec2 a name.
 - selecting an ami image. In this case(ubuntu)
 - selecting an instance type. (In this case t2.micro)
