@@ -1,4 +1,4 @@
-
+# Create ec2 instance
 resource "aws_instance" "vm" {
     count = 2
     ami           = var.instance_ami
@@ -22,11 +22,14 @@ resource "aws_instance" "vm" {
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
     sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
     sudo apt-cache policy docker-ce
-    sudo apt install docker-ce
-    sudo systemctl enable docker
+    sudo apt install docker.io -y
+    sudo systemctl enable docker.service
     sudo systemctl status docker
 EOF
 }
+
+#######################################################################################################################
+######################################################################################################################
 
 # Create a key pair
 resource "aws_key_pair" "testkey" {
@@ -45,6 +48,10 @@ resource "local_file" "testkey_private" {
   content = tls_private_key.ssh_key.private_key_pem
   filename = var.key_filename
 }
+
+
+######################################################################################################################
+######################################################################################################################
 
 
 # CREATE A SECURITY GROUP
