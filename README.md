@@ -11,4 +11,4 @@
 - create a VPC for the various environments
 
 
-
+[Documentation showing a brief overview of the project and explaining the process](https://github.com/Zenitugo/Terraform-EC2-VPC-Project/blob/master/Documentation.md)
