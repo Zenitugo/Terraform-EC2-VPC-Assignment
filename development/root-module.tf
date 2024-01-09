@@ -7,10 +7,11 @@ module "EC2_Instance" {
   key_name = "mykeypair"
   key_filename = "/home/ubuntu/.ssh/id_rsa"
   security-name = "security-west"
-  vpc_id_id = module.Network.vpc_id_id
+  vpc_id_id = module.network.vpc_id_id
   private_subnet_id = module.network.private_subnet_id
   public_subnet_id = module.network.public_subnet_id
   environment = "dev"
+
 }
 
 
@@ -21,5 +22,4 @@ module "network" {
   cidr_block = "192.58.0.0/16"
   public_subnet = "192.58.1.0/24"
   private_subnet = "192.58.2.0/24"
-
 }

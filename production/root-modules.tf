@@ -12,7 +12,6 @@ module "EC2_Instance" {
  private_subnet_id = module.network.private_subnet_id
  public_subnet_id = module.network.public_subnet_id
  environment = "prod"
-
 }
  
 
@@ -21,8 +20,8 @@ module "EC2_Instance" {
 module "network" {
   source = "../child-modules/network"
   environment = "prod"
-  cidr_block = "128.58.0.0/16"
+  cidr_block = "10.58.0.0/16"
   vpc_name = "VPC-Central"
-  public_subnet = "128.58.1.0/24"
-  private_subnet = "128.58.2.0/24"
+  public_subnet = "10.58.1.0/24"
+  private_subnet = "10.58.2.0/24"
 }

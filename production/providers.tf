@@ -11,7 +11,7 @@ terraform {
   }
 }
 
-provider "aws" {
+provider "aws"{
   # Configuration options
   region = "eu-central-1"
   profile = "default"
