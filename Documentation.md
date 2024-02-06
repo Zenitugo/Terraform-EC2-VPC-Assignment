@@ -135,11 +135,11 @@ Note: You can associate the private subnet to the route table but you would have
 To deploy this infrastructure, you will need an AWS account and the necessary permissions set up.
 You can use the following commands:
 - `terraform init` to initialise your infrastructure.
-- `terraform plan` to review and verify your configuration.
-- `terraform apply` to deploy your infrastructure
-- `terraform destroy` to destroy your infrastructure.
+- `terraform plan -var-file="tearraform.tfvars"` to review and verify your configuration.
+- `terraform apply -auto-approve` to deploy your infrastructure
+- `terraform destroy -auto-approve` to destroy your infrastructure.
 
-You also need to create a `tfvars.tf` file to create your own values for the variables specified in the root-modules.tf if you decide to deploy this script.
+A `tfvars.tf` was created to include all the values in the variable.tf file in each environment. This variable.tf file contains all the variables in the ec2-instance and network modules.
 
 To run the following commands right click on production and development directory and open with a terminal. Note: Do it one after the other.
 
