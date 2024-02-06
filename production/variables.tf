@@ -1,4 +1,4 @@
-
+# All the variables in the ec2-instance and network modules
 variable "instance_name" {}
 variable "instance_ami" {}
 variable "ec2_instance_type" {}
